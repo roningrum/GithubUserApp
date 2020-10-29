@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.roningrum.githubuserapp.R
-import com.roningrum.githubuserapp.data.Users
+import com.roningrum.githubuserapp.remote.data.Items
 import de.hdodenhof.circleimageview.CircleImageView
 
 
@@ -43,14 +43,8 @@ import de.hdodenhof.circleimageview.CircleImageView
 //        }
 //    }
 //}
-class GithubAdapter(private val users: List<Users>) :
+class GithubAdapter(private val users: List<Items>) :
     RecyclerView.Adapter<GithubAdapter.ItemViewHolder>() {
-    private lateinit var onItemCallbacks: OnItemClickCallback
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemCallbacks = onItemClickCallback
-    }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder =
         ItemViewHolder(
@@ -59,9 +53,6 @@ class GithubAdapter(private val users: List<Users>) :
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.bind(users[position])
-        holder.itemView.setOnClickListener {
-            onItemCallbacks.onItemClick(users[holder.adapterPosition])
-        }
     }
 
     override fun getItemCount() = users.size
@@ -73,17 +64,15 @@ class GithubAdapter(private val users: List<Users>) :
         private val txtUserName: TextView = view.findViewById(R.id.txt_username)
         private val txtLocation: TextView = view.findViewById(R.id.txt_user_location)
 
-        internal fun bind(user: Users) {
-            txtName.text = user.name
-            txtUserName.text = user.username
-            txtLocation.text = user.location
-            imgPhoto.setImageResource(user.avatar)
+        internal fun bind(user: Items) {
+            txtName.text = user.login
+//            imgPhoto.setImageResource(user.avatar_url)
         }
     }
 
-    interface OnItemClickCallback {
-        fun onItemClick(user: Users)
-    }
+//    interface OnItemClickCallback {
+//        fun onItemClick(user: Users)
+//    }
 }
 
 
