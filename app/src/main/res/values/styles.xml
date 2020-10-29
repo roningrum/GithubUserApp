@@ -1,10 +1,38 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@android:color/white</item>
     </style>
 
+    <style name="comfortaHeading">
+        <item name="fontFamily">@font/comfortaa_bold</item>
+        <item name="android:textColor">@color/blackHeading</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="comfortaHeadingToolbar">
+        <item name="fontFamily">@font/comfortaa_bold</item>
+        <item name="android:textColor">@color/blackHeading</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ToolbarTitleAppereance">
+        <item name="titleTextAppearance">@style/comfortaHeadingToolbar</item>
+    </style>
+
+    <style name="comfortaSubHeading">
+        <item name="fontFamily">@font/comfortaa</item>
+        <item name="android:textColor">@color/subHeading</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="comfortaRegular">
+        <item name="fontFamily">@font/comfortaa_light</item>
+        <item name="android:textColor">@color/regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>
