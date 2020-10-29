@@ -65,7 +65,7 @@
         <item>Nusantara Beta Studio</item>
     </string-array>
 
-    <string-array name="followers">
+    <integer-array name="followers">
         <item>56995</item>
         <item>5153</item>
         <item>7972</item>
@@ -76,7 +76,7 @@
         <item>178</item>
         <item>428</item>
         <item>465</item>
-    </string-array>
+    </integer-array>
 
     <string-array name="following">
         <item>12</item>
